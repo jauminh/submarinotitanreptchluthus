@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Processing.JS inside Webpages: Template</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+    }
+
+    #content {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 5px;
+      display: inline-block;
+      justify-content: space-between;
+      align-items: center;
+      color: rgb(65, 55, 125);
+      -webkit-text-stroke: 0.10px black;
+      padding-left: 150px;
+      margin-right: 150px;
+    }
+
+    canvas {
+      display: inline-block;
+      lip-path: inset(10px 200 cpx 10px 200px);
+      margin-top: 10px;
+    }
+
+    form {
+      /* Apenas para centralizar o form na página */
+      margin: 0 auto;
+      width: 400px;
+      /* Para ver as bordas do formulário */
+      padding: 1em;
+      border: 1px solid #CCC;
+      border-radius: 1em;
+    }
+
+    label {
+      color: rgb(65, 55, 125);
+      font-weight: bold;
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(65, 55, 125);
+    }
+    .container{
+        display: block;
+        border: 3px black;
+        border-radius: 5px;
+    }
+    button{
+        display: block;
+        text-align: center;
+        margin-left: 40%;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <br>
+    <h1>Introdução a Circuito Elétrico Simples</h1>
+    <br>
+    <h2 style="margin-bottom: 50px;">Um circuito elétrico simples é composto por elementos básicos, como fios condutores, uma lâmpada, uma bateria e um interruptor. Esses componentes formam um sistema que permite a passagem de corrente elétrica e a iluminação da lâmpada. O interruptor controla a abertura e o fechamento do circuito, enquanto a bateria fornece a energia necessária para acender a lâmpada. Vamos explorar como esses elementos se conectam e funcionam juntos para criar um circuito elétrico simples.</h2>
+    <br>
+    <img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2022/06/circuito-eletrico.jpg" alt="exemplo de um circuito eletrico">
+
+    <br>
+    <h1>1.CIRCUITO PARALELO</h1>
+    <br />
+    <h2 style="margin-bottom: 50px;">
+      Um circuito elétrico em paralelo é uma configuração na qual os componentes elétricos estão conectados lado a lado, de modo que uma corrente elétrica se divide entre eles. Em um circuito em paralelo, a tensão aplicada é a mesma em todos os componentes, enquanto a corrente é distribuída entre eles de acordo com suas respectivas resistências.
+      <br>
+      Nesse tipo de circuito, cada componente possui uma conexão direta com os pontos de entrada e saída do circuito, formando caminhos paralelos para uma corrente elétrica. Isso significa que a corrente total é dividida entre os componentes, mas a tensão aplicada em cada um deles é a mesma.
+      <br>
+      Uma característica importante dos circuitos em paralelo é que a resistência total do circuito é menor do que a resistência de qualquer um dos componentes individuais. Isso ocorre porque, quando os componentes estão em paralelo, há mais caminhos disponíveis para a corrente elétrica fluir, originada em uma menor resistência total.
+    </h2>
+    <br />
+    <br>
+    <h1 style="margin-bottom: 25px;">2.CIRCUITO ELETRICO EM SERIE</h1>
+    <br />
+    <h2>
+      O circuito em série tem por princípio a ligação dos componentes em
+      sequência, sem a divisão do circuito,ou seja, duas ou mais cargas estão sendo alimentadas por um único
+      caminho </h2>
+  </div>
+  <form>
+    <div class="container">
+      <h2>Qual circuito tem ligações em série?</h2>
+      <input type="radio" id="correto1" name="questao1">
+      <label for="correto1">Série</label><br>
+      <input type="radio" name="questao1">
+      <label for="paralelo1">Paralelo</label><br>
+    </div>
+  </form>
+  
+  <form>
+    <div class="container">
+      <h2>Qual é a característica principal de um circuito paralelo?</h2>
+      <input type="radio" name="questao2">
+      <label for="b2">A corrente elétrica flui por um único caminho.</label><br>
+      <input type="radio" name="questao2">
+      <label for="c2">A resistência total do circuito é igual à soma das resistências individuais.</label><br>
+      <input type="radio" name="questao2" id="correto2">
+      <label for="correto2">A corrente elétrica é dividida entre os componentes.</label><br>
+      <input type="radio" name="questao2">
+      <label for="d2">Os componentes estão conectados em sequência.</label><br>
+    </div>
+  </form>
+  
+  <form>
+    <div class="container">
+      <h2>O que acontece com a voltagem em um circuito paralelo quando são adicionados mais componentes?</h2>
+      <input type="radio" name="questao3">
+      <label for="b3">A voltagem total do circuito aumenta.</label><br>
+      <input type="radio" name="questao3">
+      <label for="c3">A voltagem total do circuito diminui.</label><br>
+      <input type="radio" name="questao3">
+      <label for="d3">A voltagem total do circuito depende da resistência dos componentes.</label><br>
+      <input type="radio" name="questao3" id="correto3">
+      <label for="correto3">A tensão total do circuito permanece a mesma.</label><br>
+    </div>
+  </form>
+  
+  <form>
+    <div class="container">
+      <h2>Em um circuito em série, a resistência total é calculada como:</h2>
+      <input type="radio" name="questao4" id="correto4">
+      <label for="correto4">A soma das resistências individuais.</label><br>
+      <input type="radio" name="questao4">
+      <label for="b4">O inverso da soma dos inversos das resistências individuais.</label><br>
+      <input type="radio" name="questao4">
+      <label for="c4">A média das resistências individuais.</label><br>
+      <input type="radio" name="questao4">
+      <label for="d4">A diferença entre as resistências individuais.</label><br>
+      <br>
+      <button type="button" onclick="checkAnswers()">Verificar</button>
+    </div>
+  </form>
+  
+  <script>
+    function checkAnswers() {
+      var score = 0;
+  
+      if (document.getElementById('correto1').checked) {
+        score++;
+      }
+      if (document.getElementById('correto2').checked) {
+        score++;
+      }
+      if (document.getElementById('correto3').checked) {
+        score++;
+      }
+      if (document.getElementById('correto4').checked) {
+        score++;
+      }
+  
+      alert("Você acertou: " + score + "!");
+    }
+  </script>
+  
+</script>
+  <!--This draws the canvas on the webpage -->
+  <canvas id="mycanvas"></canvas>
+
+  <!-- Include the processing.js library -->
+  <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+  <script>
+    var programCode = function(processingInstance) {
+      with(processingInstance) {
+        size(700, 800);
+        frameRate(30);
+        var estadoLampada1 = 0;
+        var estadoLampada2 = 0;
+        var luz = 0;
+        var modo = 0;
+        var serie = 0;
+        var cor = 0;
+        var cor2 = fill(240, 255, 240);
+        var corbotao = 255;
+        var corbotao2 = 255;
+        var ligado = 0;
+        var lampesq_serie = 0;
+        var lampdir_serie = 0;
+        var lampjg_serie = 0;
+        //iur funções
+        var lampada = function(x, y) {
+          fill(110 + cor, 110 + cor, 110 - cor);
+          ellipse(0 + x, 0 + y, 30, 30);
+        };
+        var lampada2 = function(x, y) {
+          fill(110 + luz, 110 + luz, 110 + luz);
+          ellipse(0 + x, 0 + y, 30, 30);
+        };
+        var botao = function(x, y) {
+          fill(corbotao, 0, 0);
+          ellipse(300 + x, 305 + y, 50, 50);
+          fill(255, 0, 0);
+          noFill();
+          line(300 + x, 291 + y, 300 + x, 305 + y);
+          arc(300 + x, 305 + y, 25, 25, -43, 225);
+        };
+        var botao2 = function(x, y) {
+          fill(corbotao2, 0, 0);
+          ellipse(235 + x, 240 + y, 50, 50);
+          fill(255, 0, 0);
+          noFill();
+          line(235 + x, 240 + y, 235 + x, 230 + y);
+          arc(235 + x, 240 + y, 25, 25, -50, 225);
+        };
+        var circuitoserie = function(x, y) {
+          line(300 + x, 50 + y, 300 + x, 305 + y);
+          // line(100 + x, 50 + y, 300 + x, 50 + y);
+          line(100 + x, 305 + y, 300 + x, 305 + y);
+          line(100 + x, 50 + y, 100 + x, 305 + y);
+          strokeWeight(2);
+        };
+        var bocal = function(x, y) {
+          fill(255, 0, 0);
+          ellipse(x, y, 13, 13);
+        };
+        var bateria = function(x, y) {
+          fill(255, 157, 0);
+          rect(166 + x, 283 + y, 73, 45);
+          line(190 + x, 305 + y, 173 + x, 305 + y);
+          line(182 + x, 297 + y, 182 + x, 313 + y);
+          line(230 + x, 305 + y, 214 + x, 305 + y);
+        };
+        var fiacao = function() {
+          fill(0, 0, 0);
+          strokeWeight(3);
+          line(250, 50, 450, 50);
+          line(250, 170, 450, 170);
+          line(250, 300, 450, 300);
+          line(250, 50, 250, 300);
+          line(450, 50, 450, 300);
+          fill(255, 251, 0);
+        };
+        var bocal = function(x, y) {
+          fill(255, 0, 0);
+          ellipse(x, y, 15, 15);
+        };
+        mousePressed = function() {
+          console.log("oi");
+          //lampada2
+          if (mouseX > 330 && mouseX < 370 && mouseY > 150 && mouseY < 180) {
+            if (estadoLampada1 === 0) {
+              estadoLampada1 = 1;
+            } else {
+              estadoLampada1 = 0;
+            }
+          }
+          //lampada1
+          if (mouseX > 330 && mouseX < 370 && mouseY > 30 && mouseY < 70) {
+            if (estadoLampada2 === 0) {
+              estadoLampada2 = 1;
+            } else {
+              estadoLampada2 = 0;
+            }
+          }
+          //butao
+          if (mouseX > 235 && mouseX < 275 && mouseY > 220 && mouseY < 270) {
+            if (luz === 0) {
+              luz = 255;
+              corbotao2 = 144;
+            } else {
+              luz = 0;
+              corbotao2 = 255;
+            }
+          }
+          //butaoiury
+          if (mouseX > 230 && mouseX < 270 && mouseY > 530 && mouseY < 570) {
+            if (lampesq_serie === 0) {
+              lampesq_serie = 1;
+            } else {
+              lampesq_serie = 0;
+            }
+          }
+          if (mouseX > 430 && mouseX < 470 && mouseY > 530 && mouseY < 570) {
+            if (lampdir_serie === 0) {
+              lampdir_serie = 1;
+            } else {
+              lampdir_serie = 0;
+            }
+          }
+          if (mouseX > 330 && mouseX < 360 && mouseY > 385 && mouseY < 425) {
+            if (lampjg_serie === 0) {
+              lampjg_serie = 1;
+            } else {
+              lampjg_serie = 0;
+            }
+          }
+          //botao//
+          if (mouseX > 220 && mouseX < 280 && mouseY > 620 && mouseY < 680) {
+            if (ligado === 0) {
+              ligado = 1;
+            } else {
+              ligado = 0;
+            }
+          }
+        };
+        draw = function() {
+          background(255, 255, 255);
+          fiacao();
+          bocal(350, 170);
+          bocal(350, 50);
+          //botao
+          botao2(15, 3);
+          if (estadoLampada1 === 1) {
+            lampada2(350, 157);
+          }
+          if (estadoLampada2 === 1) {
+            lampada2(350, 37);
+          }
+          //iury
+          circuitoserie(150, 380);
+          botao(-50, 350);
+          bocal(250, 550); //1//
+          bocal(450, 550); //2//
+          bocal(350, 405); //3//
+          bateria(150, 380);
+          bateria(145, -2);
+          if (lampesq_serie === 1) {
+            lampada(250, 535);
+          }
+          if (ligado === 1) {
+            corbotao = 150;
+          } else {
+            corbotao = 255;
+          }
+          if (lampdir_serie === 1) {
+            lampada(450, 535);
+          }
+          if (lampjg_serie === 1) {
+            strokeWeight(3);
+            line(350, 400, 250, 430);
+            line(350, 400, 450, 430);
+            lampada(350, 390);
+          } else {
+            line(250, 430, 450, 430);
+          }
+          if (lampesq_serie + lampdir_serie > 1) {
+            serie = 2;
+          } else {
+            serie = 0;
+          }
+          if (serie === 2 && ligado === 1) {
+            cor = 150;
+          } else {
+            cor = 0;
+          }
+          if (
+            lampjg_serie === ligado &&
+            lampdir_serie === ligado &&
+            lampesq_serie === ligado
+          ) {
+            cor = 50;
+          }
+        };
+      }
+    
+    };
+    
+    
+
+    
+  </script>
+
+</body>
+
+</html>
